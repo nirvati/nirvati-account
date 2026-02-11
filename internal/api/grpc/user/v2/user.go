@@ -25,6 +25,16 @@ func (s *Server) AddHumanUser(ctx context.Context, req *connect.Request[user.Add
 	if err = s.command.AddUserHuman(ctx, orgID, human, false, s.userCodeAlg); err != nil {
 		return nil, err
 	}
+
+	// Automatically grant ORG_USER_SELF_MANAGER to new users so they can delete their own account if they want to.
+	if _, err = s.command.ChangeOrgMember(ctx, &command.ChangeOrgMember{
+		UserID: human.ID,
+		OrgID:  orgID,
+		Roles:  []string{"ORG_USER_SELF_MANAGER"},
+	}); err != nil {
+		return nil, err
+	}
+
 	return connect.NewResponse(&user.AddHumanUserResponse{
 		UserId:    human.ID,
 		Details:   object.DomainToDetailsPb(human.Details),
