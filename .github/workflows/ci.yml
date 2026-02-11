@@ -56,9 +56,6 @@ jobs:
       - lint_test_build
       - pack
     if: ${{ github.event_name == 'workflow_dispatch' }}
-    secrets:
-      APP_ID: ${{ secrets.APP_ID }}
-      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
     with:
       semantic_version: "23.0.7"
       image_name_github_api: "ghcr.io/nirvati/zitadel"
