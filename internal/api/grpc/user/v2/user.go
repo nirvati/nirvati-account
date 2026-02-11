@@ -27,7 +27,7 @@ func (s *Server) AddHumanUser(ctx context.Context, req *connect.Request[user.Add
 	}
 
 	// Automatically grant ORG_USER_SELF_MANAGER to new users so they can delete their own account if they want to.
-	if _, err = s.command.ChangeOrgMember(ctx, &command.ChangeOrgMember{
+	if _, err = s.command.AddOrgMember(ctx, &command.AddOrgMember{
 		UserID: human.ID,
 		OrgID:  orgID,
 		Roles:  []string{"ORG_USER_SELF_MANAGER"},
