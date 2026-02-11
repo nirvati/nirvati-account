@@ -42,8 +42,8 @@ jobs:
       go_version: "1.25"
       node_version: "22"
       semantic_version: "23.0.7"
-      image_name_github_api: "ghcr.io/zitadel/zitadel"
-      image_name_github_login: "ghcr.io/zitadel/zitadel-login"
+      image_name_github_api: "ghcr.io/nirvati/zitadel"
+      image_name_github_login: "ghcr.io/nirvati/zitadel-login"
 
   release:
     uses: ./.github/workflows/release.yml
@@ -61,5 +61,5 @@ jobs:
       APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
     with:
       semantic_version: "23.0.7"
-      image_name_github_api: "ghcr.io/zitadel/zitadel"
-      image_name_github_login: "ghcr.io/zitadel/zitadel-login"
+      image_name_github_api: "ghcr.io/nirvati/zitadel"
+      image_name_github_login: "ghcr.io/nirvati/zitadel-login"
