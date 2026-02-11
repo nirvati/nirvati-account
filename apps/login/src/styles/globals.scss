@@ -25,6 +25,12 @@ html {
   background-image: url("/checkbox.svg");
 }
 
+.has-nirvati-bg {
+  background-image: url("/ui/v2/login/nirvati-bg.svg");
+  background-size: cover;
+  background-position: center;
+}
+
 .skeleton {
   --accents-2: var(--theme-light-background-400);
   --accents-1: var(--theme-light-background-500);

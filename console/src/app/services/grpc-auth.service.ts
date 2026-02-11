@@ -221,9 +221,11 @@ export class GrpcAuthService {
     } else {
       let orgs: Org.AsObject[];
       const org = this.storage.getItem<Org.AsObject>(StorageKey.organization, StorageLocation.local);
+      console.log("ORG", org);
 
       if (org) {
         orgs = (await this.listMyProjectOrgs(ORG_LIMIT, 0)).resultList;
+        console.log(orgs);
         this.cachedOrgs.next(orgs);
 
         const find = this.cachedOrgs.getValue().find((tmp) => tmp.id === id);
@@ -249,6 +251,8 @@ export class GrpcAuthService {
 
       if (orgs.length === 0) {
         this._activeOrgChanged.next(undefined);
+        console.log('No organizations found for user');
+        console.error(orgs);
         return Promise.reject(new Error('No organizations found!'));
       }
 
