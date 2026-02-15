@@ -47,7 +47,7 @@ export const guidesSidebar: readonly SidebarItem[] = [
           "guides/manage/console/projects-overview",
           "guides/manage/console/applications-overview",
           "guides/manage/console/users-overview",
-          "concepts/structure/managers",
+          "concepts/structure/administrators",
         ],
       },
       {
@@ -631,7 +631,7 @@ export const guidesSidebar: readonly SidebarItem[] = [
               "guides/integrate/identity-providers/azure-ad-oidc",
               "guides/integrate/identity-providers/azure-ad-saml",
               "guides/integrate/identity-providers/okta-oidc",
-              "guides/integrate/identity-providers/okta-saml",
+              "guides/integrate/identity-providers/okta_saml",
               "guides/integrate/identity-providers/keycloak",
               "guides/integrate/identity-providers/onelogin-saml",
               "guides/integrate/identity-providers/pingfederate-saml",
@@ -679,7 +679,7 @@ export const guidesSidebar: readonly SidebarItem[] = [
           "guides/manage/console/roles",
           "guides/integrate/retrieve-user-roles",
           "concepts/structure/granted_projects",
-          "guides/manage/console/managers",
+          "guides/manage/console/administrators",
         ],
       },
       {
