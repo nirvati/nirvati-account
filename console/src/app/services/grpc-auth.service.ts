@@ -221,7 +221,6 @@ export class GrpcAuthService {
     } else {
       let orgs: Org.AsObject[];
       const org = this.storage.getItem<Org.AsObject>(StorageKey.organization, StorageLocation.local);
-      console.log("ORG", org);
 
       if (org) {
         orgs = (await this.listMyProjectOrgs(ORG_LIMIT, 0)).resultList;
